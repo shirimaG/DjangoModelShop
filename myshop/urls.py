@@ -1,5 +1,4 @@
 """myshop URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
 Examples:
@@ -19,11 +18,19 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import home_page, about_page, contacts_page, login_page, register_page
+
 urlpatterns = [
+    url(r'^$', home_page),
+    url(r'^about/', about_page),
+    url(r'^login/', login_page),
+    url(r'^register/', register_page),
+    url(r'^contacts/', contacts_page),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
-    url(r'^', include('shop.urls', namespace='shop')),
+    url(r'^shop/', include('shop.urls', namespace='shop')),
+  
     
 ]
 

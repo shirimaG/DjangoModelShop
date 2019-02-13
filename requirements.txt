@@ -1,0 +1,4 @@
+Django==1.11.16
+django-admin-view-permission==1.9
+Pillow==2.9.0
+pytz==2018.7
